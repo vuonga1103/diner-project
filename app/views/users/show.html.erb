@@ -1,0 +1,12 @@
+<h1><%= @user.name %></h1>
+
+<h4><%= @user.age %> years old.</h4> 
+
+<h4>All Diner Ratings</h4>
+
+<% @user.ratings.each do |rating| %>
+  <%= rating.diner.name %> | 
+  <%= rating.comment %>
+
+  <br><br>
+<% end %>

@@ -1,0 +1,9 @@
+<h1>All Ratings</h1>
+
+<% @ratings.each do |rating| %>
+
+  <%= rating.user.name %> said "<%= rating.comment %>" about <%= rating.diner.name %>. <%= rating.user.name %> gave it <%= rating.stars %> stars. <br><br>
+
+<% end %>
+
+<%= link_to "See All Users", users_path %>

@@ -1,0 +1,10 @@
+<h1>All Users</h1>
+
+<% @users.each do |user| %>
+  <p>
+  Name: <%= link_to user.name, user_path(user) %><br>
+  Age: <%= user.age %><br>
+  </p>
+<% end %>
+
+<%= button_to "Create a Rating", new_rating_path, method: :get %>

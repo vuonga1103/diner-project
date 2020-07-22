@@ -1,0 +1,25 @@
+<h1>Create a New Rating!</h1>
+<%= form_with model: @rating do |f| %>
+    <%= f.collection_select :user_id, User.all, :id, :name, {:prompt => "Select a User"} %>
+    
+    <br>
+    <br>
+    <%= f.collection_select :diner_id, Diner.all, :id, :name, {:prompt => "Select a Diner"} %>
+    
+    <br>
+    <br>
+
+    <%= f.label :stars %>
+    <%= f.number_field :stars %>
+    <br>
+    <br>
+    
+    <%= f.label :comment %>
+    <%= f.text_field :comment %>
+
+    <br>
+    <br>
+    <%= f.submit %>
+<% end %>
+<br>
+<%= link_to "See All Users", users_path %>

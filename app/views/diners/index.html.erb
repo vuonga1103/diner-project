@@ -1,0 +1,11 @@
+<h1>List of All Diners</h1>
+
+<% @diners.each do |diner| %>
+  Name: <%= diner.name %><br>
+  Borough: <%= diner.borough %><br>
+  Has been reviewed by:<br>
+  <% diner.users.each do |user| %>
+    - <%= user.name %> gave <%= Rating.find_by(user: user, diner: diner).stars %> stars. 
+    <br><br>
+  <% end %>
+<% end %>
